@@ -7,10 +7,10 @@ services:
     volumes:
       - documenso_database:/var/lib/postgresql/data
     healthcheck:
-  test: ["CMD-SHELL", "pg_isready -U $POSTGRES_USER"]
-  interval: 10s
-  timeout: 5s
-  retries: 5
+      test: ["CMD-SHELL", "pg_isready -U $POSTGRES_USER"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
     environment:
       - POSTGRES_USER=documenso
       - POSTGRES_PASSWORD=password
