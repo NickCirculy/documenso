@@ -170,6 +170,35 @@ export const FieldContent = ({ field, documentMeta }: FieldIconProps) => {
 
   const textAlign = fieldMeta && 'textAlign' in fieldMeta ? fieldMeta.textAlign : 'left';
 
+  // If inserted, not a signature, and has customText, use a wrapping <div> with break-words/whitespace-pre-line
+  if (field.inserted && field.customText && !isSignatureField) {
+    return (
+      <div
+        className={cn(
+          'text-field-card-foreground flex h-full w-full items-center',
+          {
+            'justify-start': textAlign === 'left',
+            'justify-end': textAlign === 'right',
+            'justify-center': textAlign === 'center',
+          },
+        )}
+      >
+        <p
+          className={cn(
+            'w-full break-words whitespace-pre-line text-[clamp(0.07rem,25cqw,0.825rem)]',
+            {
+              'text-left': textAlign === 'left',
+              'text-right': textAlign === 'right',
+              'text-center': textAlign === 'center',
+            },
+          )}
+        >
+          {field.customText}
+        </p>
+      </div>
+    );
+  }
+
   return (
     <div
       className={cn(
