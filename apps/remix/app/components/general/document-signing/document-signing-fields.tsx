@@ -37,7 +37,7 @@ export const DocumentSigningFieldsInserted = ({
     <div className="flex h-full w-full items-center">
       <p
         className={cn(
-          'text-foreground w-full text-left text-[clamp(0.425rem,25cqw,0.825rem)] duration-200',
+          'text-foreground w-full text-left text-[clamp(0.425rem,25cqw,0.825rem)] break-words whitespace-pre-line duration-200',
           {
             '!text-center': textAlign === 'center',
             '!text-right': textAlign === 'right',
