@@ -371,7 +371,7 @@ CREATE TABLE "OrganisationGroup" (
     "name" TEXT,
     "type" "OrganisationGroupType" NOT NULL,
     "organisationRole" "OrganisationMemberRole" NOT NULL,
-    "organisationId" TEXT NOT NULL,
+    "organisationId" TEXT,
 
     CONSTRAINT "OrganisationGroup_pkey" PRIMARY KEY ("id")
 );
